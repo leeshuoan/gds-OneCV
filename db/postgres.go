@@ -7,7 +7,7 @@ import (
 	"os"
 )
 
-func openConnection() *sql.DB {
+func OpenConnection() *sql.DB {
 	dbUser := os.Getenv("DB_USER")
 	dbPassword := os.Getenv("DB_PASSWORD")
 	dbName := os.Getenv("DB_NAME")

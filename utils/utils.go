@@ -6,14 +6,14 @@ import (
 	"strings"
 )
 
-func sendJSONError(w http.ResponseWriter, statusCode int, message string) {
+func SendJSONError(w http.ResponseWriter, statusCode int, message string) {
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(statusCode)
 	response := map[string]string{"message": message}
 	json.NewEncoder(w).Encode(response)
 }
 
-func parseMentionedStudents(notificationText string) []string {
+func ParseMentionedStudents(notificationText string) []string {
 	mentionedStudents := []string{}
 	words := strings.Fields(notificationText)
 	for _, word := range words {

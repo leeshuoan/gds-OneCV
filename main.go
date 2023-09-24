@@ -12,20 +12,20 @@ import (
 
 func main() {
 	router := mux.NewRouter()
-	db := openConnection()
+	db := db.OpenConnection()
 	defer db.Close()
 
 	router.HandleFunc("/api/register", func(w http.ResponseWriter, r *http.Request) {
-		Register(w, r, db)
+		handlers.Register(w, r, db)
 	}).Methods("POST")
 	router.HandleFunc("/api/commonstudents", func(w http.ResponseWriter, r *http.Request) {
-		CommonStudents(w, r, db)
+		handlers.CommonStudents(w, r, db)
 	}).Methods("GET")
 	router.HandleFunc("/api/suspend", func(w http.ResponseWriter, r *http.Request) {
-		Suspend(w, r, db)
+		handlers.Suspend(w, r, db)
 	}).Methods("POST")
 	router.HandleFunc("/api/retrievefornotifications", func(w http.ResponseWriter, r *http.Request) {
-		RetrieveForNotifications(w, r, db)
+		handlers.RetrieveForNotifications(w, r, db)
 	}).Methods("POST")
 
 	fmt.Println("Server at 8080")

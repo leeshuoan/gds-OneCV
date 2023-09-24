@@ -1,4 +1,4 @@
-module main
+module github.com/leeshuoan/gds-OneCV
 
 go 1.20
 
