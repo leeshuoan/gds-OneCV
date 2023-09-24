@@ -48,8 +48,6 @@ INSERT INTO students (student_email) VALUES
     ('studentmiche@gmail.com');
 
 INSERT INTO registrations (teacher_email, student_email) VALUES
-    ('teacherken@gmail.com', 'studentjon@gmail.com'),
-    ('teacherken@gmail.com', 'studenthon@gmail.com'),
     ('teacherken@gmail.com', 'commonstudent1@gmail.com'),
     ('teacherjoe@gmail.com', 'studentjon@gmail.com'),
     ('teacherjoe@gmail.com', 'studenthon@gmail.com'),
