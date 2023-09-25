@@ -1,0 +1,156 @@
+{
+	"info": {
+		"_postman_id": "95346540-7e74-4bb0-9a28-2baf6a862570",
+		"name": "GDS-OneCV",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "17615332"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"teacher\": \"teacherken@gmail.com\",\r\n    \"students\": [\r\n        \"studentjon@gmail.com\",\r\n        \"studenthon@gmail.com\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8000/api/register"
+			},
+			"response": []
+		},
+		{
+			"name": "Common Students1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/commonstudents?teacher=teacherken%40gmail.com",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"commonstudents"
+					],
+					"query": [
+						{
+							"key": "teacher",
+							"value": "teacherken%40gmail.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Common Students2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/commonstudents?teacher=teacherken%40gmail.com&teacher=teacherjoe%40gmail.com",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"commonstudents"
+					],
+					"query": [
+						{
+							"key": "teacher",
+							"value": "teacherken%40gmail.com"
+						},
+						{
+							"key": "teacher",
+							"value": "teacherjoe%40gmail.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Suspend Student",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": "\n",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"student\": \"studentmary@gmail.com\"\r\n}"
+				},
+				"url": "localhost:8000/api/suspend"
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve Notification1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"teacher\": \"teacherken@gmail.com\",\r\n    \"notification\": \"Hello students! @studentagnes@gmail.com @studentmiche@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8000/api/retrievefornotifications"
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve Notification2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"teacher\": \"teacherken@gmail.com\",\r\n    \"notification\": \"Hey everybody\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8000/api/retrievefornotifications"
+			},
+			"response": []
+		}
+	]
+}
