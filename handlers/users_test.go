@@ -11,7 +11,7 @@ import (
 )
 
 func TestRegister(t *testing.T) {
-	db, mock := NewMock()
+	db, mock := mocks.NewMock()
 	defer db.Close()
 
 	handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {

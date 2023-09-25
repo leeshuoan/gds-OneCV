@@ -1,4 +1,4 @@
-package handlers
+package mocks
 
 import (
 	"database/sql"
